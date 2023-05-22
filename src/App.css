@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+html,
+body {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+body {
+  background: -webkit-linear-gradient(45deg, #49a09d, #5f2c82);
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 600px;
+  overflow-y: scroll;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #55608f;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
 }
 
-.App-link {
-  color: #61dafb;
+.search-field {
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 15px;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #555;
+  background-color: #fff;
+  outline: none;
+  transition: all 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-field:focus {
+  border-color: #000;
+  outline: none;
+  box-shadow: 0 0 5px 0 #00000033;
+}
+
+.search-field::-webkit-input-placeholder {
+  color: #555;
+}
+
+.search-field::-moz-placeholder {
+  color: #555;
+}
+
+.search-field:-ms-input-placeholder {
+  color: #555;
+}
+
+.search-field::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-field input {
+  border: none;
+  background-color: transparent;
+  color: #555;
+}
+
+.search-field .search-icon {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.search-field .search-icon i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #555;
+}
+
+.search-field .search-icon:hover {
+  background-color: #ccc;
 }
